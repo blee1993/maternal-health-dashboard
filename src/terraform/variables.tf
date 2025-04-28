@@ -5,13 +5,7 @@ variable "aws_region" {
   default     = "us-west-2"  # You can change this as needed
 }
 
-variable "aws_access_key" {
-    default = env("AWS_ACCESS_KEY_ID")
-}
 
-variable "aws_secret_key" {
-    default = env("AWS_SECRET_ACCESS_KEY")
- }
 
 variable "data_bucket_name" {
     type = string

@@ -4,8 +4,11 @@ provider "aws" {
 }
 
 # Deploy S3 bucket for storing data
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+}
 resource "aws_s3_bucket" "data_bucket" {
-  bucket = var.data_bucket_name
+  bucket = "${var.data_bucket_name}-${random_id.bucket_suffix.hex}"
 }
 
 # IAM Role for Lambda

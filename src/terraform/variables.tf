@@ -2,10 +2,8 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources into"
   type        = string
-  default     = "us-west-2"  # You can change this as needed
+  default     = "us-east-1"  #YOUR_REGION
 }
-
-
 
 variable "data_bucket_name" {
     type = string

@@ -1,5 +1,6 @@
 import json
 import boto3
+import logging
 import os
 import pandas as pd
 from sodapy import Socrata

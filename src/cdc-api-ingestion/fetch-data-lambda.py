@@ -30,11 +30,11 @@ def load_to_s3(client, bucket, dataset_name, dataset_id):
 
     s3 = boto3.client("s3")
     csv_content = results_df.to_csv(index=False)
-    s3.put_object(Bucket=s3_bucket, Key=s3_key, Body=csv_content.encode("utf-8"))
-    logger.info(f"Uploaded to S3: s3://{s3_bucket}/{s3_key}")
+    s3.put_object(Bucket=bucket, Key=s3_key, Body=csv_content.encode("utf-8"))
+    logger.info(f"Uploaded to S3: s3://{bucket}/{s3_key}")
 
 def lambda_handler(event, context):
-    logging.info("Received event:", json.dumps(event))
+    logger.info("Received event: %s", json.dumps(event))
 
     domain = "data.cdc.gov"
     secret = get_secret("cdc/api/app_token")

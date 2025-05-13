@@ -55,7 +55,8 @@ def lambda_handler(event, context):
     for dataset in datasets:
         load_to_s3(client, s3_bucket, dataset["name"], dataset["id"])
     
+    logger.info("Datasets successfully loaded to S3.")
     return {
         'statusCode': 200,
-        'body': json.dumps(message)
+        'body': json.dumps("Complete.")
     }

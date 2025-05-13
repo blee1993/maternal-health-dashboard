@@ -45,7 +45,7 @@ def lambda_handler(event, context):
     s3_bucket = "" #data_bucket_name created from terraform 
     
     datasets = [
-        {"name": "vsrr_maternal_mortality", "id": "e2d5-ggg7"}, # VSRR Provisional Maternal Death Counts and Rates
+        {"name": "maternal_mortality", "id": "e2d5-ggg7"}, # VSRR Provisional Maternal Death Counts and Rates
         {"name": "rsv_vaccination", "id": "g4jn-64pd"}, # RSV Vaccination 
         {"name": "covid_vaccination", "id": "efqg-e273"}, # COVID Vaccination
         {"name": "breastfeeding", "id": "8hxn-cvik"}, # Breastfeeding
